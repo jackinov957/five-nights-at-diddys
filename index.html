@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FNAF Web Game</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* Start Screen Styles */
+    #start-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('gamebackground.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #start-screen h1 {
+      color: white;
+      font-size: 3rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+      margin-bottom: 20px;
+    }
+
+    #start-screen button {
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #start-screen button:hover {
+      background-color: #555;
+    }
+
+    /* Game Container */
+    #game {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Start Screen -->
+  <div id="start-screen">
+    <h1>FNAF Web Game</h1>
+    <button id="play-button">Play</button>
+  </div>
+
+  <!-- Game Container -->
+  <div id="game">
+    <h2>Welcome to the game! More content coming soon...</h2>
+  </div>
+
+  <script>
+    // Get elements
+    const startScreen = document.getElementById('start-screen');
+    const playButton = document.getElementById('play-button');
+    const gameContainer = document.getElementById('game');
+
+    // Add event listener to the play button
+    playButton.addEventListener('click', () => {
+      // Hide the start screen and show the game container
+      startScreen.style.display = 'none';
+      gameContainer.style.display = 'flex';
+    });
+  </script>
+</body>
+</html>
